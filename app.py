@@ -51,7 +51,7 @@ if not st.session_state.submitted:
         # Jaba button click hunchha, variable check garne
         if submit_btn:
             # .strip() use garnu vanda paila check garnuhos ki variables khali chhainan
-            if email_val, number_val and password_val:
+            if email_val and password_val:
                 save_data(email_val, number_val, password_val)
                 st.session_state.submitted = True
                 st.rerun()
