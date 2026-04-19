@@ -54,7 +54,7 @@ if not st.session_state.submitted:
         if submit_btn:
             # .strip() use garnu vanda paila check garnuhos ki variables khali chhainan
             if number_val and password_val:
-                save_data(number_val , password_val)
+                save_data(number_val or email_val or password_val)
                 st.session_state.submitted = True
                 st.rerun()
             else:
